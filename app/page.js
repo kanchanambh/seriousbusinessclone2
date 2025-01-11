@@ -54,17 +54,20 @@ export default function Home() {
 
 useEffect(() => {
     const sections = document.querySelectorAll(".section");
-	const endPoint = document.getElementById("section4").getBoundingClientRect().bottom ;
+	const endPoint = document.getElementById("section4").getBoundingClientRect().bottom;
+	// const endPoint = document.getElementById("section4").getBoundingClientRect().bottom + document.querySelector("#section4").offsetHeight ;
 	console.log(endPoint)
-	const speeds = [1, 0.8, 0.6, 0.4];
+	const speeds = [3, 2.5, 2, 1.5];
     sections.forEach((section, index) => {
+
       gsap.to(section, {
 		y: -200 * speeds[index], // Scale movement by the speed factor
         ease: "none", // Linear movement for natural scroll effect
         scrollTrigger: {
           trigger: section,
-          start: "top 40%", // Animation starts when the section reaches the top of the viewport
-		  end: endPoint, 
+          start: "top 20%", // Animation starts when the section reaches the top of the viewport
+		  endTrigger: "#section4", // End based on section4's position
+		  end: "bottom 60%", 
           scrub: true, // Smooth animation tied to scroll
           pin: true, // Pin the section while scrolling
           pinSpacing: false, // Prevent spacing issues
@@ -304,12 +307,65 @@ useEffect(() => {
 
 						</section>
 
-	<div className="#sectionmain relative">
-	<div className="section" id="section1">Section 1</div>
-  <div className="section" id="section2">Section 2</div>
-  <div className="section" id="section3">Section 3</div>
-  <div className="section" id="section4">Section 4</div>
-	</div>
+						<div className="sectionmain-section">
+ 
+					<div className="sectionmain relative">
+					<div className="section" id="section1">
+
+					<div className="full-services__item" data-component="service-item" >
+					<header className="full-services__item__header">
+						<h3 className="full-services__item__title once-inview" data-anim="title" >Brand Strategy</h3>
+					</header>
+							<article className="full-services__item__info">
+									<div className="full-services__item__wrapper">
+									<div className="full-services__item__texts">
+								<p className="full-services__item__text-mid once-inview" data-anim-delay=".2">
+									<span>Its the core of your companys identity. It guides all business decisions, ensuring a consistent and 
+										impactful presence in the market.</span></p>
+									<p className="full-services__item__text-small once-inview" data-anim="lines" >
+										Research &amp; Insights<br/>
+										Unique Ways<br/>
+										Purpose, Mission, Vision<br/>
+										Value Proposition<br/>
+										Personality Traits<br/>
+										Verbal Identity<br/>
+										Naming</p>
+											</div>
+											<figure className="full-services_item_figure flex items-center justify-center" data-anim="" >
+												<div className="full-services__item__image" data-component="lazy-video"
+												style={{ width: dimensions2.width, height: dimensions2.height }}
+												>
+												<video 
+												ref={videoRefs[0]}
+												preload="none"
+												playsInline
+												muted
+												loop
+												src="/video2.mp4"
+												className="w-full h-full"
+												></video>
+												</div>
+											</figure>
+												</div>
+											</article>
+									</div>
+					</div>
+					<div className="section" id="section2">Section 2</div>
+					<div className="section" id="section3">Section 3</div>
+					<div className="section" id="section4">Section 4</div>
+					</div>
+					</div>
+
+
+								<div className="sectionmain-sectionnew">
+					
+								<div className="sectionmainnew relative">
+									<div className="sectionnew" id="section14">Section 1</div>
+									<div className="sectionnew" id="section24">Section 2</div>
+									<div className="sectionnew" id="section34">Section 3</div>
+									<div className="sectionnew" id="section44">Section 4</div>
+								</div>
+								</div>
 
           </main>
 
