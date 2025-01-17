@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactLenis, useLenis } from 'lenis/react'
 import Image from 'next/image'
 import WorkSection from "./components/WorkSection";
+import PageInAnimation from "./components/PageInAnimation";
+import TrandingSection from "./components/TrandingSection";
 
 
 export default function Home() {
@@ -26,9 +28,7 @@ export default function Home() {
   const [dimensions, setDimensions] = useState({ width: "80%", height: "80%" });
   const [dimensions2, setDimensions2] = useState({ width: "80%", height: "80%" });
 
-  const textRef = useRef(null); 
-  const blackDivRef = useRef(null);
-  const blackTextRef = useRef(null);
+
 
 
   const sphere1Ref = useRef(null);
@@ -43,84 +43,6 @@ export default function Home() {
 
   useEffect(() => {
 	animatePageIn();
-
-	const t2 = gsap.timeline({ delay: 0.2});
-
-    // Add animations to the timeline in sequence
-    t2.to(
-      blackDivRef.current,
-      {
-        y: "0%", // Move into the viewport
-        duration: 1,
-        ease: "power3.in",
-      }
-    )
-	t2.to(
-		blackDivRef.current,
-		{
-		  y: "100%", // Move into the viewport
-		  duration: 1.5,
-		  ease: "none",
-		  onComplete:()=>{
-			  blackDivRef.current.style.display = "none";
-			}
-		}
-		
-	  )
-
-      .fromTo(
-        textRef.current,
-        { y: 430, scale: 1.5}, // Start position and scale
-        {
-          y: 400, // Move to center
-          scale: 1.5, // Scale down
-          duration: 0.3,
-          ease: "power3.out",
-		  onStart: () => {
-            textRef.current.style.display = "flex";
-          },
-		  
-        },
-		"-=1.5"
-		
-      )
-	  .fromTo(
-        textRef.current,
-        { y: 400, scale: 1.5}, // Start position and scale
-        {
-          y: 0, // Move to center
-          scale: 1, // Scale down
-          duration: 1,
-          ease: "power3.out",
-		  onStart: () => {
-            textRef.current.style.display = "flex";
-          },
-		  onComplete:()=>{
-			textRef.current.style.display = "none";
-		  }
-        },
-		"<0.5"
-		
-      )
-      .fromTo(
-        blackTextRef.current,
-        { y: 400, scale: 1.5 , display: "none"}, // Start position and scale
-        {
-          y: 0, // Move to center
-          scale: 1, // Scale down
-          duration: 1,
-          ease: "power3.out",
-          onStart: () => {
-            blackTextRef.current.style.display = "flex";
-          },
-          onUpdate: () => {
-            if (gsap.getProperty(blackTextRef.current, "y") < 250) {
-              textRef.current.style.display = "none";
-            }
-          },
-        },
-		"<"
-      );
 
 
 	  const handleAnimations = () => {
@@ -282,22 +204,7 @@ const sections = document.querySelectorAll(".section");
     <ReactLenis root options={lenisOptions}>
 	<BannerSection />
       <div className=" w-full">
-	  <div  ref={blackDivRef} className="  absolute w-screen h-[100vh] top-0 left-0  bg-black items-start justify-center z-10 translate-y-[-100%]"> </div>
-    <h1
-        ref={blackTextRef}
-        className="text-[60px]  fixed top-0 right-1/2 translate-x-1/2 translate-y-1/2 font-bold text-black uppercase z-20"
-        style={{ display: "none" }} // Start by hiding the black text
-      >
-         Main Logo
-      </h1>
-
-      {/* White text */}
-      <h1
-        ref={textRef}
-        className="text-[60px] hidden fixed top-0 right-1/2 translate-x-1/2 translate-y-1/2 font-bold text-white uppercase z-30"
-      >
-        Main Logo
-      </h1>
+		<PageInAnimation/>
         <div className="wrapper">
           <main  className="root-section">
             <section className="hero flex items-center flex-col justify-start relative z-[1]">
@@ -586,6 +493,7 @@ const sections = document.querySelectorAll(".section");
 		</div>
 		</section>
 		<WorkSection/>
+		<TrandingSection/>
 		
 								{/* <div className="sectionmain-sectionnew">
 					

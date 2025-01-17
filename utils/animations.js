@@ -17,7 +17,7 @@ export const animatePageIn = () => {
         tl.to(banner, {
           y: "100%",
           ease: "power3.out",
-          duration: 1.5,
+          duration: 1.7,
           onComplete: () => {
             banner.style.display = "none"; // Hides the banner when its animation is done
           },

@@ -4,7 +4,6 @@
 
 
 html, body{
-overflow: hidden;
   --svh: 641px;
 --dvh: 641px;
 --global-padding: 2rem;
@@ -27,7 +26,7 @@ overflow: hidden;
   --change-color-duration: 0.5s
 }
 body .root .wrapper {
-  overflow: hidden;
+
   padding: var(--global-padding);
   width: 100%;
   --margin-section: 10rem;
@@ -1042,3 +1041,39 @@ main .facts_about_section {
 padding-bottom: 100px;
 }
 /*-----------------------------------------End Work Section ---------------------------------*/
+
+
+footer {
+  height: 200px;
+  background: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.footer-text {
+  font-size: 1.5rem;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  color: #fff;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add animation to the footer text when visible */
+.footer-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeSlideUp 1s ease-out forwards;
+}
