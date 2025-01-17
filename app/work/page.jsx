@@ -74,22 +74,21 @@ const WorkPage = () => {
     <>
       <BannerSection /> 
     
-      <div  ref={blackDivRef} className=" absolute w-full h-full top-0 left-0 right-0 bottom-0 bg-black flex items-start justify-center"> </div>
-       
-        <h1
+      <div  ref={blackDivRef} className="  absolute w-screen h-[100vh] top-0 left-0  bg-black items-start justify-center z-10 translate-y-[-100%]"> </div>
+    <h1
         ref={blackTextRef}
-        className="text-[80px] absolute top-0 right-1/2 translate-x-1/2 font-bold text-black uppercase"
+        className="text-[60px]  fixed top-0 right-1/2 translate-x-1/2 translate-y-1/2 font-bold text-black uppercase z-20"
         style={{ display: "none" }} // Start by hiding the black text
       >
-         Main Logo Section
+         Main Logo
       </h1>
 
       {/* White text */}
       <h1
         ref={textRef}
-        className="text-[80px] absolute top-0 right-1/2 translate-x-1/2 font-bold text-white uppercase"
+        className="text-[60px] hidden fixed top-0 right-1/2 translate-x-1/2 translate-y-1/2 font-bold text-white uppercase z-30"
       >
-        Main Logo Section
+        Main Logo
       </h1>
       <div
         ref={contentDivRef}

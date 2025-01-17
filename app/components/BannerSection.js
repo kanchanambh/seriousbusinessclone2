@@ -3,15 +3,15 @@ const BannerSection = () => {
         <div>
         <div
           id="banner-1"
-          className="min-h-screen bg-red-600 z-[500] fixed top-0 left-0 w-screen"
+          className=" bg-red-600 z-[502] absolute top-0 left-0 h-[100vh] w-screen translate-y-[100%]"
         />
         <div
           id="banner-2"
-          className="min-h-screen bg-blue-700 z-[500] fixed top-0 left-0 w-screen"
+          className=" bg-blue-700 z-[501] absolute top-0 left-0 h-[100vh] w-screen translate-y-[100%]"
         />
         <div
           id="banner-3"
-          className="min-h-screen bg-orange-500 z-[500] fixed top-0 left-0 w-screen"
+          className=" bg-pink-500 z-[500] absolute top-0 left-0 h-[100vh] w-screen translate-y-[100%]"
         />
       
     

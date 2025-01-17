@@ -25,9 +25,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-pink-300`}
       >
         <main className=" ">
-          {/* <div className="w-1/2 mx-auto p-1 float-right">
+          <div className="w-1/2 mx-auto p-1 float-right">
           <Navigation />
-          </div> */}
+          </div>
         
           {children}
         </main>
