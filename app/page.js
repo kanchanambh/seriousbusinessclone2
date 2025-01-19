@@ -9,6 +9,7 @@ import Image from 'next/image'
 import WorkSection from "./components/WorkSection";
 import PageInAnimation from "./components/PageInAnimation";
 import TrandingSection from "./components/TrandingSection";
+import BrandsSection from "./components/BrandsSection";
 
 
 export default function Home() {
@@ -462,6 +463,7 @@ const sections = document.querySelectorAll(".section");
 									<span>Is the core of your identity. It guides all business decisions, ensuring a consistent and 
 										impactful presence in the market.</span></p>
 									<p className="full-services__item__text-small once-inview" data-anim="lines" >
+
 										Research &amp; Insights<br/>
 										Unique Ways<br/>
 										Purpose, Mission, Vision<br/>
@@ -494,7 +496,7 @@ const sections = document.querySelectorAll(".section");
 		</section>
 		<WorkSection/>
 		<TrandingSection/>
-		
+		<BrandsSection/>
 								{/* <div className="sectionmain-sectionnew">
 					
 								<div className="sectionmainnew relative">
