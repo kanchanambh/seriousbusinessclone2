@@ -41,7 +41,7 @@ const AboutPage = () => {
       <div className="content">
         <PageInAnimation />
         <main className="root-section">
-          <section className="hero">
+          <section className="hero-about">
             <h1 className="hero__title">
               <span data-anim="title" className="once-inview">
                 Est<span className="hero__title__dot">.</span> 2015

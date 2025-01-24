@@ -2182,7 +2182,7 @@ body  .wrapper .root-section>section {
 
 
 
-main .hero {
+main .hero-about {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -2195,7 +2195,7 @@ main .hero {
 
 
 @media (min-width: 1025px) {
-  main .hero {
+  main .hero-about {
         padding: calc(5.75rem - var(--global-padding)) 0 var(--global-padding);
     }
   }

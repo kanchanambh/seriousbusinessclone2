@@ -25,9 +25,6 @@ const WorkPage = () => {
           <div className="nav__links">
             <div
               className="nav__links__wrapper once-inview"
-              data-anim="show"
-              data-anim-stagger=".15"
-              data-cursor="none"
             >
               <a
                 className="nav__link nav__link--active show"
@@ -100,8 +97,7 @@ const WorkPage = () => {
                 <span className="nav__link__anim">
                   <span
                     className="nav__big split-text typeface-hover"
-                    data-component="hover-typeface"
-                    data-typeface="nib-pro"
+
                   >
                     <span className="parts-root" >
                       <span
