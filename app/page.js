@@ -11,6 +11,7 @@ import PageInAnimation from "./components/PageInAnimation";
 import TrandingSection from "./components/TrandingSection";
 import BrandsSection from "./components/BrandsSection";
 import HeroSection from "./components/HeroSection";
+import WaterStickVideo from "./components/WaterStickVideo";
 
 
 export default function Home() {
@@ -104,6 +105,7 @@ const sections = document.querySelectorAll(".section");
           <main  className="root-section">
          
 		 <HeroSection/>
+		 <WaterStickVideo/>
 			
             <section className="facts_section w-full z-10">
               <section className="swiper_section">

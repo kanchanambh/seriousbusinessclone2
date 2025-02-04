@@ -28,7 +28,6 @@ html, body{
 }
 body .wrapper {
 
-  padding: var(--global-padding);
   width: 100%;
   --margin-section: 10rem;
   --margin-sub: 3rem;
@@ -42,18 +41,11 @@ body .wrapper {
 
 body .wrapper {
   overflow: hidden;
-  padding: var(--global-padding);
   width: 100%;
   --margin-section: 10rem;
   --margin-sub: 3rem;
 }
 
-@media (min-width: 1025px) {
-  body .wrapper {
-      --margin-section: 18.75rem;
-      --margin-sub: 5rem;
-  }
-}
 
 /*------------------------------NavBar------------------------*/
 
@@ -64,13 +56,6 @@ body .wrapper {
 
 
 /*------------------------------End NavBar------------------------*/
-body .wrapper .root-section {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: var(--margin-section);
-  padding-bottom: var(--margin-section);
-}
 
 
  main .hero_center {
@@ -246,7 +231,7 @@ main .facts__swiper__wrapper {
 }
 
 .rounded-bg {
-  background: #fff;
+  background: #e2e2e2;
   border-radius: 100vmax;
   color: #1e1e1e;
   height: 3rem;
@@ -278,6 +263,9 @@ main .facts__swiper__wrapper {
   user-select: none;
   width: 95%;
   z-index: 98;
+  left: 0;
+  right: 0;
+  margin: 50px auto;
 }
 
 .navbar__wrapper {
@@ -421,7 +409,7 @@ main .facts__swiper__wrapper {
 
 @media(min-width: 1025px) {
   .navbar__menu-content {
-      background-color:var(--background-color,var(--white));
+      background-color: #e2e2e2;
       border-radius: 100vmax;
       display: flex;
       height: var(--radius,5rem);
@@ -689,6 +677,13 @@ main .facts__swiper__wrapper {
   object-position: right top;
   transform: translate(-50px, 10px) rotate(3deg);
 }
+
+.WaterStickVideo_waterStickVideo__cc5Zt {
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+  width: 100%;
+}
 /*---------------------------------------------*/
 .full-services_list{
   width: 95vw;
@@ -759,7 +754,6 @@ main .facts__swiper__wrapper {
 
 body .wrapper {
   overflow: hidden;
-  padding: var(--global-padding);
   width: 100%;
   --margin-section: 10rem;
   --margin-sub: 3rem;
@@ -1562,7 +1556,7 @@ a {
 }
 .circle-bg {
   align-items: center;
-  background: #fff;
+  background: #e2e2e2;
   border-radius: 50%;
   display: flex;
   flex-direction: row;
@@ -2508,7 +2502,6 @@ body .wrapper .root-section {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: var(--margin-section);
   width: 100%;
 }
 body .root .wrapper main {

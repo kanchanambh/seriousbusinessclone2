@@ -32,7 +32,7 @@ function NavBar() {
     }
   }, [isMenuOpen]);
   return (
-    <div className="navbar"
+    <div className="navbar mt-[50px]"
    
     >
       <div className="navbar__wrapper">
@@ -41,7 +41,7 @@ function NavBar() {
           href="#contact"
           aria-label="Let’s work"
         >
-          <div className="navbar__work__text rounded-bg">Let’s work</div>
+          <div className="navbar__work__text bg-red-500 rounded-bg">Let’s work</div>
           <div className="navbar__work__smile circle-bg">
             <svg viewBox="0 0 70 60">
               <use href="/smile-ic.svg#ic"></use>

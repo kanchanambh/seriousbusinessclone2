@@ -27,10 +27,10 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
       >
         <main  className="wrapper ">
-          <div className="w-full mx-auto p-1 float-right">
+         
           <NavBar />
 
-          </div>
+      
         
           {children}
           <Footer/>
