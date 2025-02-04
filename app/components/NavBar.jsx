@@ -7,14 +7,28 @@ function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const toggleRef = useRef(null);
+  const rightIconRef = useRef(null);
+  const rightIconSVGRef = useRef(null);
+  const leftIconRef = useRef(null);
+  const leftIconSVGRef = useRef(null);
+   
 
   useEffect(() => {
     if (isMenuOpen) {
-      gsap.to(menuRef.current, { opacity: 1, display: "flex", x: 0, duration: 0.3, y: 0 });
-      gsap.to(toggleRef.current, { opacity: 0, duration: 0.3, onComplete: () => (toggleRef.current.style.display = "none") });
+      gsap.to(menuRef.current, { opacity: 1, width: "100%", display: "flex", x: 0, duration: 0.4, y: 0 });
+      gsap.to(toggleRef.current, { opacity: 0, duration: 0.1, display :"none" });
+      gsap.to(rightIconRef.current, { opacity: 0,   width: "0px", height: "0px", duration: 0.3,  });
+      gsap.to(rightIconSVGRef.current, { opacity: 0,  width: "0px", height: "0px", duration: 0.3, });
+      gsap.to(leftIconRef.current, { opacity: 1,   width: "50px", height: "50px", duration: 0.3,  });
+      gsap.to(leftIconSVGRef.current, { opacity: 1,  width: "30px", height: "30px", duration: 0.3, });
+
     } else {
-      gsap.to(menuRef.current, { opacity: 0, duration: 0.3, x: 50, onComplete: () => (menuRef.current.style.display = "none") });
+      gsap.to(menuRef.current, { opacity: 0, width: "0%", duration: 0.3, x: 0, onComplete: () => (menuRef.current.style.display = "none") });
       gsap.to(toggleRef.current, { opacity: 1, display: "flex", duration: 0.3 });
+      gsap.to(rightIconRef.current, { opacity: 1,   width: "50px", height: "50px", duration: 0.3,  });
+      gsap.to(rightIconSVGRef.current, { opacity: 1,  width: "30px", height: "30px", duration: 0.3, });
+      gsap.to(leftIconRef.current, { opacity: 0,   width: "0px", height: "0px", duration: 0.3,  });
+      gsap.to(leftIconSVGRef.current, { opacity: 0,  width: "0px", height: "0px", duration: 0.3, });
     }
   }, [isMenuOpen]);
   return (
@@ -36,11 +50,11 @@ function NavBar() {
         </a>
 
         <div className="navbar__menu-container">
-          {/* <div className="navbar__circle navbar__circle--left circle-bg" >
-            <svg className="navbar__circle__arrow" viewBox="0 0 22 16" >
+          <div ref={leftIconRef} className="navbar__circle navbar__circle--left circle-bg" >
+            <svg ref={leftIconSVGRef} className="navbar__circle__arrow" viewBox="0 0 22 16" >
               <use href="/arrow.svg#arrow"></use>
             </svg>
-          </div> */}
+          </div>
 
           <div className="navbar__menu-content"
            onMouseEnter={() => setIsMenuOpen(true)}
@@ -75,14 +89,14 @@ function NavBar() {
           </div>
           </div>
 
-          {isMenuOpen && (
+      
 
-          <div className="navbar__circle navbar__circle--right circle-bg" >
-            <svg className="navbar__circle__arrow" viewBox="0 0 22 16" >
+          <div ref={rightIconRef}  className="navbar__circle navbar__circle--right circle-bg" >
+            <svg ref={rightIconSVGRef} className="navbar__circle__arrow" viewBox="0 0 22 16" >
               <use href="/arrow.svg#arrow"></use>
             </svg>
           </div>
-             )}
+           
         </div>
       </div>
     </div>
