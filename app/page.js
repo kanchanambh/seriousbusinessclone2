@@ -10,6 +10,7 @@ import WorkSection from "./components/WorkSection";
 import PageInAnimation from "./components/PageInAnimation";
 import TrandingSection from "./components/TrandingSection";
 import BrandsSection from "./components/BrandsSection";
+import HeroSection from "./components/HeroSection";
 
 
 export default function Home() {
@@ -46,113 +47,7 @@ export default function Home() {
 	animatePageIn();
 
 
-	  const handleAnimations = () => {
-		const tracker = trackerRef.current;
-	  
-		
-	  
-		const moveEvent = (e) => {
-		  
-		  const wrapperRect = tracker.getBoundingClientRect();
-	  
-		  const relX = e.clientX - (wrapperRect.left + wrapperRect.width / 2);
-		  const relY = e.clientY - (wrapperRect.top + wrapperRect.height / 2);
-	  
-	  
-		  const sphere1DisX = (relX / wrapperRect.width) * 25;
-		  const sphere1DisY = (relY / wrapperRect.height) * 25;
-	  
-		  const sphere2DisX = (relX / wrapperRect.width) * 50;
-		  const sphere2DisY = (relY / wrapperRect.height) * 50;
-	  
-		  gsap.to(sphere1Ref.current, {
-			x: sphere1DisX,
-			y: sphere1DisY,
-			ease: "power3.out",
-			duration: 0.35,
-		  });
-	  
-		  gsap.to(sphere2Ref.current, {
-			x: sphere2DisX,
-			y: sphere2DisY,
-			ease: "power3.out",
-			duration: 0.35,
-		  });
-		};
-	  
-		const leaveEvent = () => {
-		  gsap.to(sphere1Ref.current, {
-			x: 0,
-			y: 0,
-			ease: "power3.out",
-			duration: 1,
-		  });
-	  
-		  gsap.to(sphere2Ref.current, {
-			x: 0,
-			y: 0,
-			ease: "power3.out",
-			duration: 1,
-		  });
-		};
-	  
-		tracker.addEventListener("mousemove", moveEvent);
-		tracker.addEventListener("mouseleave", leaveEvent);
-	  
-		return () => {
-		  tracker.removeEventListener("mousemove", moveEvent);
-		  tracker.removeEventListener("mouseleave", leaveEvent);
-		};
-	  };
-	  
-	  
-	  if (typeof window !== "undefined") {
-		handleAnimations();
-	  }
 
-const tl = gsap.timeline({
-	scrollTrigger: {
-	  trigger: heroReelWrapperRef.current,
-	  start: "100% 101%", // Start when the element reaches 10% of the viewport
-	  end: "bottom 10%", // End when the element reaches 10% from the bottom
-	  scrub: 1, // Tie the animation to the scroll position
-	  pin:true,
-
-	  onEnter: () => {
-		// This will reset the transform when the ScrollTrigger is triggered
-		gsap.set(heroReelWrapperRef, { clearProps: "transform" });
-	  },
-	  onRefresh: () => {
-		// Recalculate the layout after page refresh and reset any issues with transforms
-		gsap.set(heroReelWrapperRef, { clearProps: "transform" });
-	  },
-	 
-	},
-  
-  });
-  
-  tl.fromTo(
-	heroReelContainerRef.current,
-	{
-	  transformOrigin:"left bottom",
-	  width: "20%", // Starting width
-	  height: "20%", // Starting height
-	},
-	{
-	  transformOrigin:"left bottom",
-	  width: "100%", // Final width
-	  height: "100%", // Final height
-	  ease: "none", // Easing for smooth scaling
-	},
-	0 // 0 means the second animation starts at the same time as the first
-  );
-  
-
-
-    if (videoRef.current) {
-      videoRef.current.load();
-      videoRef.current.play();
-    }
 	videoRefs.forEach((ref) => {
 		if (ref.current) {
 		  ref.current.load();
@@ -207,50 +102,9 @@ const sections = document.querySelectorAll(".section");
 		<PageInAnimation/>
         <div className="wrapper">
           <main  className="root-section">
-            <section className="hero flex items-center flex-col justify-start relative z-[1]">
-               
-
-                <div  className="hero_center">
-
-                    <h1 className="mixed-title" data-anim="title">
-                      <span className="text-4xl font-normal">FOR ADULTS WITH TYPE 2 DIABETES</span>
-                      <span className="text-6xl font-bold">Mounjaro is proven to help lower A1C*</span>
-                    </h1>
-
-                  <div   className="hero_hover">
-                  <div ref={trackerRef} className="tracker"  >         
-                    <div ref={sphere1Ref} className="sphere1"></div>
-                    <div ref={sphere2Ref} className="sphere2"></div>        
-                  </div>
-                      </div>
-	              </div>
-          
-
-					<div ref={heroReelWrapperRef} className="hero_reel_wrapper flex items-end w-[90%] h-[85%] mb-10 ml-10"
-						style={{
-							margin: 'auto', // Set margin to auto to center the div horizontally
-							padding:"50px"
-						}}
-						
-						>
-
-
-							<div ref={heroReelContainerRef} className="hero_reel_container w-[20%] h-[20%] flex justify-center items-center m-auto">
-									<div className="hero_reel_video"  >
-										<video 
-										ref={videoRef}
-										preload="none"
-										playsInline
-										muted
-										loop
-										src="/video1.mp4"
-										className="w-full h-full"
-										></video>
-									</div>
-								</div>
-						</div>
-									
-            </section>
+         
+		 <HeroSection/>
+			
             <section className="facts_section w-full z-10">
               <section className="swiper_section">
               <section className="facts_swiper swiper swiper-initialized swiper-horizontal swiper-backface-hidden once-inview" 
