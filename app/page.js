@@ -113,10 +113,11 @@ export default function Home() {
 const tl = gsap.timeline({
 	scrollTrigger: {
 	  trigger: heroReelWrapperRef.current,
-	  start: "100% 100%", // Start when the element reaches 10% of the viewport
-	  end: "bottom 20%", // End when the element reaches 10% from the bottom
+	  start: "100% 101%", // Start when the element reaches 10% of the viewport
+	  end: "bottom 10%", // End when the element reaches 10% from the bottom
 	  scrub: 1, // Tie the animation to the scroll position
 	  pin:true,
+
 	  onEnter: () => {
 		// This will reset the transform when the ScrollTrigger is triggered
 		gsap.set(heroReelWrapperRef, { clearProps: "transform" });
@@ -179,7 +180,7 @@ const sections = document.querySelectorAll(".section");
           scrub: true, 
           pin: true, 
           pinSpacing: false, 
-        //   markers: true, 
+         //  markers: true, 
 		  
         },
       });
@@ -187,9 +188,7 @@ const sections = document.querySelectorAll(".section");
 
 	ScrollTrigger.refresh(); 
 
-	// Cleanup function on component unmount
 	return () => {
-	 // Kill all active ScrollTriggers
 	 ScrollTrigger.getAll().forEach(trigger => trigger.kill());
    };  
 
@@ -209,15 +208,13 @@ const sections = document.querySelectorAll(".section");
         <div className="wrapper">
           <main  className="root-section">
             <section className="hero flex items-center flex-col justify-start relative z-[1]">
-                {/* <div  className=" flex relative w-full items-center justify-center h-auto">
-                  <h1 className=" text-black text-[50px] font-extrabold ">LOGO SECTION</h1>
-                </div> */}
+               
 
                 <div  className="hero_center">
 
                     <h1 className="mixed-title" data-anim="title">
-                      <span className="text-2xl font-normal">Branding and Digital Design</span>
-                      <span className="text-2xl font-light">Agency for Startups &amp; Scaleups</span>
+                      <span className="text-4xl font-normal">FOR ADULTS WITH TYPE 2 DIABETES</span>
+                      <span className="text-6xl font-bold">Mounjaro is proven to help lower A1C*</span>
                     </h1>
 
                   <div   className="hero_hover">
@@ -227,31 +224,7 @@ const sections = document.querySelectorAll(".section");
                   </div>
                       </div>
 	              </div>
-                {/* <div className="hero_reel "
-                style={{ width: dimensions.width, height: dimensions.height }}
-                >
-		                <div className="hero_reel_wrapper  once-inview" data-anim="" >
-						             
-                          <div ref={heroReelContainerRef} 
-                          className="hero_reel_container m-0 w-[20%] h-[20%] flex justify-center items-center"
-                          
-                          >
-                            <div className="hero_reel_video"  >
-                                <video 
-                                ref={videoRef}
-                                preload="none"
-                                playsInline
-                                muted
-                                loop
-                                src="/video1.mp4"
-                                className="w-full h-full"
-                                ></video>
-                            </div>
-                          </div>
-									
-						          
-	                  </div>
-	              </div> */}
+          
 
 					<div ref={heroReelWrapperRef} className="hero_reel_wrapper flex items-end w-[90%] h-[85%] mb-10 ml-10"
 						style={{
