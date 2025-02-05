@@ -35,41 +35,6 @@ function PageInAnimation() {
             }
             
           )
-    
-          // .fromTo(
-          //   textRef.current,
-          //   { y: 430, scale: 1.5}, // Start position and scale
-          //   {
-          //     y: 400, // Move to center
-          //     scale: 1.5, // Scale down
-          //     duration: 0.3,
-          //     ease: "power3.out",
-          //     onStart: () => {
-          //       textRef.current.style.display = "flex";
-          //     },
-              
-          //   },
-          //   "-=1.5"
-            
-          // )
-          // .fromTo(
-          //   textRef.current,
-          //   { y: 400, scale: 1.5}, // Start position and scale
-          //   {
-          //     y: 0, // Move to center
-          //     scale: 1, // Scale down
-          //     duration: 1,
-          //     ease: "power3.out",
-          //     onStart: () => {
-          //       textRef.current.style.display = "flex";
-          //     },
-          //     onComplete:()=>{
-          //       textRef.current.style.display = "none";
-          //     }
-          //   },
-          //   "<0.5"
-            
-          // )
           .fromTo(
             blackTextRef.current,
             { y: 400, scale: 1.5 , display: "none"}, // Start position and scale
@@ -94,12 +59,8 @@ function PageInAnimation() {
                <Image className=" w-[250px] h-auto z-20 absolute top-0 right-1/2 translate-x-1/2 translate-y-1/2 "  src="/mounjaro_logo.svg"
               
                ref={blackTextRef}
-               alt="Next Button" width={30} height={30} />
-
-
-  
-
-
+               alt='ddd'
+              width={30} height={30} />
     </>
   )
 }

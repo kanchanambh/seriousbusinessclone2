@@ -46,9 +46,18 @@ export default function Home() {
 
 
   useEffect(() => {
-	animatePageIn();
 
-
+	const runAnimation = async () => {
+		await animatePageIn(); // Wait for banners to finish
+		setIsAnimating(false); // Show content after animation
+	  };
+  
+	  runAnimation();
+	  gsap.fromTo(
+        "#hero-main",
+        { opacity: 0, y: 220 }, // Start invisible & slightly lower
+        { opacity: 1, y: 0, duration: 1, delay:1.5, ease: "power3.out" } // Fade in smoothly
+      );
 
 	videoRefs.forEach((ref) => {
 		if (ref.current) {
@@ -100,8 +109,9 @@ const sections = document.querySelectorAll(".section");
     <> 
     <ReactLenis root options={lenisOptions}>
 	<BannerSection />
+	<PageInAnimation/>
       <div className=" w-full">
-		<PageInAnimation/>
+		
         <div className="wrapper">
           <main  className="root-section">
          

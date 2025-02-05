@@ -1,9 +1,32 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function HeroSection() {
+
+  const HeroSectionRef = useRef(null)
+
+
+  useEffect(() => {
+    if (HeroSectionRef.current) {
+      gsap.to(HeroSectionRef.current, {
+        y: 200, 
+        ease: "none", 
+        scrollTrigger: {
+          trigger: HeroSectionRef.current,
+          start: "11% 10%",   
+          end: "bottom 0%", 
+          scrub: 0.1,
+          pin: true, 
+        },
+      });
+    }
+  }, []);
+
+      
   return (
-    <div className="flex items-center w-full h-full justify-start mt[-100px] relative z-[1]">
+    <div id="hero-main" ref={HeroSectionRef} className="flex items-center w-full h-full justify-start mt[-100px] relative z-[-1] opacity-0">
       <section className="Hero_hero__EW3HD hero">
         <div className="Hero_heroHolder__dKj3Y">
           <div className="Hero_heroTitle__dzWAx">
