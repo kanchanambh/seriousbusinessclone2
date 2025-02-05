@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html, body{
   --svh: 641px;
 --dvh: 641px;
@@ -10,6 +14,7 @@ html, body{
 --margin-section: 18.75rem;
 --margin-sub: 5rem;
 --font-size: 1.25rem;
+
 }
 :root {
   --white: #fff;

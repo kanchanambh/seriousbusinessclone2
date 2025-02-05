@@ -15,7 +15,7 @@ import WaterStickVideo from "./components/WaterStickVideo";
 
 
 export default function Home() {
-
+	
   
 
   const lenisOptions = {
@@ -42,6 +42,7 @@ export default function Home() {
   const heroReelWrapperRef = useRef(null);
   const heroReelContainerRef = useRef(null);
 
+  const [isAnimating, setIsAnimating] = useState(true);
 
 
   useEffect(() => {

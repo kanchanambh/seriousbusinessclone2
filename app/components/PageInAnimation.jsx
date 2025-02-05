@@ -19,7 +19,7 @@ function PageInAnimation() {
           blackDivRef.current,
           {
             y: "0%", // Move into the viewport
-            duration: 1,
+            duration: 0.8,
             ease: "power3.in",
           }
         )
@@ -88,7 +88,7 @@ function PageInAnimation() {
     }, []);
   return (
     <>
-    	  <div  ref={blackDivRef} className="  absolute w-screen h-[100vh] top-0 left-0  bg-black items-start justify-center z-10 translate-y-[-100%]"> </div>
+    	  <div  ref={blackDivRef} className="  absolute right-0 h-[100vh] top-0 left-0  bg-black items-start justify-center z-10 translate-y-[-100%]"> </div>
   
         
                <Image className=" w-[250px] h-auto z-20 absolute top-0 right-1/2 translate-x-1/2 translate-y-1/2 "  src="/mounjaro_logo.svg"

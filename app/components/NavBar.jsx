@@ -32,7 +32,7 @@ function NavBar() {
     }
   }, [isMenuOpen]);
   return (
-    <div className="navbar mt-[50px]"
+    <div className="navbar "
    
     >
       <div className="navbar__wrapper">

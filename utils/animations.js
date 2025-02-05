@@ -1,5 +1,5 @@
 import gsap from "gsap"
-import CustomEase from "gsap/CustomEase"
+
 
 export const animatePageIn = () => {
   console.log('Page animation triggered')
@@ -13,7 +13,7 @@ export const animatePageIn = () => {
         y:'-100%',
       
       });
-      [bannerThree, bannerTwo, bannerOne].forEach((banner, index) => {
+      [ bannerThree, bannerTwo, bannerOne].forEach((banner, index) => {
         tl.to(banner, {
           y: "100%",
           ease: "power3.out",
