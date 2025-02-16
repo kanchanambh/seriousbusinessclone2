@@ -1,19 +1,20 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from 'next/font/google';
 import "./globals.css";
 import Navigation from "./components/Navigation"
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import { ReactLenis } from 'lenis/react'
+const inter = Inter({ 
+  variable: "--font-inter-sans",
+  subsets: ['latin'] });
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  const lenisOptions = {
+    lerp: 0.1,
+    duration: 1.5,
+    smoothTouch: false, //smooth scroll for touch devices
+    smooth: true,
+  };
 
 export const metadata = {
   title: "Create Next App",
@@ -23,12 +24,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+       <ReactLenis root options={lenisOptions}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100`}
+        className={`${inter.variable}  antialiased bg-gray-100`}
       >
         <main  className="wrapper ">
          
-          <NavBar />
+          {/* <NavBar /> */}
 
       
         
@@ -37,6 +39,7 @@ export default function RootLayout({ children }) {
         </main>
         
       </body>
+      </ReactLenis>
     </html>
   );
 }

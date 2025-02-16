@@ -30,7 +30,8 @@ function HeroSection() {
       <section className="Hero_hero__EW3HD hero">
         <div className="Hero_heroHolder__dKj3Y">
           <div className="Hero_heroTitle__dzWAx">
-            <h1 className="hero__title">Mounjaro <br/> injections</h1>
+            <h1 className="hero__title">What is  Mounjaro</h1>
+            <p>Mounjaro is a prescription-only treatment for weight loss and type 2 diabetes. It comes as a weekly self-injectable pen and contains the active ingredient tirzepatide. It works by suppressing appetite, making you feel less hungry.</p>
             <div className="Hero_heroImg__XUqEV hero__img">
                      <Image
                                     src="/hand_white_pod.webp"
